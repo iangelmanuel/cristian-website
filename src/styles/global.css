@@ -1,0 +1,215 @@
+/*
+ * Estilos globales de la landing.
+ *  1. Tokens del tema (colores y fuente)
+ *  2. Base: html, body, selección, foco y tipografía
+ *  3. Utilidades propias: display, tnum
+ *  4. Piezas que el JavaScript controla (data-* y clases en <html>)
+ */
+@import "tailwindcss";
+@import "@fontsource-variable/archivo/wdth.css";
+
+/* ─── 1. Tokens ─────────────────────────────────────────────────────────── */
+
+@theme {
+  --font-sans: "Archivo Variable", system-ui, sans-serif;
+
+  /* El cielo de sus fotos, de mediodía a noche, y el mar de Santa Marta. */
+  --color-zenith: #2a6594;
+  --color-sky: #3a78a6;
+  --color-haze: #82adcb;
+  --color-haze-hi: #a6c5da;
+  --color-dusk: #1554a0;
+  --color-ember: #f2a16b;
+  --color-indigo: #062f7d;
+  --color-night: #0a1d45;
+  --color-sea-deep: #073c4a;
+  --color-sea: #0b6b74;
+  --color-sand: #f2e4c4;
+  --color-sun: #fcff1c;
+  --color-ink: #0b2440;
+  --color-ink-soft: #1d3d5e;
+}
+
+/* ─── 2. Base ───────────────────────────────────────────────────────────── */
+
+@layer base {
+  html {
+    scrollbar-color: var(--color-sun) var(--color-night);
+    scroll-behavior: smooth;
+    scroll-padding-top: 1rem;
+    background: var(--color-zenith);
+    color-scheme: light;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    font-stretch: 100%;
+    background: var(--color-zenith);
+    color: white;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background: var(--color-sun);
+    color: var(--color-ink);
+  }
+
+  :focus-visible {
+    outline: 3px solid var(--color-sun);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  .on-light :focus-visible {
+    outline-color: var(--color-ink);
+  }
+
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  a {
+    text-underline-offset: 0.2em;
+    text-decoration-thickness: 0.08em;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+/* ─── 3. Utilidades ─────────────────────────────────────────────────────── */
+
+/* La voz de Exuberante: pesada, expandida y en mayúsculas. */
+@utility display {
+  font-stretch: 125%;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  line-height: 0.88;
+}
+
+@utility tnum {
+  font-variant-numeric: tabular-nums;
+}
+
+/* ─── 4. Piezas controladas por JavaScript ──────────────────────────────── */
+
+/* La foto se funde con el cielo de la página: en móvil por arriba y abajo, en escritorio por arriba e izquierda. */
+.hero-photo {
+  mask-image:
+    linear-gradient(
+      to bottom,
+      transparent 0%,
+      black 22%,
+      black 62%,
+      transparent 94%
+    ),
+    linear-gradient(to right, transparent 0%, black 22%);
+  mask-composite: intersect;
+  -webkit-mask-composite: source-in;
+}
+
+@media (min-width: 1024px) {
+  .hero-photo {
+    mask-image:
+      linear-gradient(to bottom, transparent 0%, black 30%),
+      linear-gradient(to right, transparent 0%, black 28%);
+  }
+}
+
+/* Con JavaScript, las regiones dejan ver un solo cielo continuo; sin él (o con movimiento reducido) quedan las franjas fijas. */
+html.js-ground body {
+  background-color: var(--ground, var(--color-haze-hi));
+  transition: background-color 0.25s linear;
+}
+
+html.js-ground [data-ground]:not([data-ground-keep]) {
+  background: transparent;
+}
+
+/* Entrada del hero: oculta solo mientras GSAP la prepara; si el script falla, aparece sola a los 2.5 s. */
+html.intro :is([data-hero-name], [data-hero-photo], [data-hero-copy]) {
+  visibility: hidden;
+  animation: intro-failsafe 0s 2.5s forwards;
+}
+
+@keyframes intro-failsafe {
+  to {
+    visibility: visible;
+  }
+}
+
+/* La barra fija espera fuera de la pantalla; GSAP la baja cuando el hero queda atrás. */
+[data-bar] {
+  translate: 0 -110%;
+}
+
+/* Ecualizador: tres barras cuadradas, del color del texto, que laten mientras suena una canción. */
+.eq {
+  display: inline-flex;
+  align-items: flex-end;
+  gap: 2px;
+  height: 0.85em;
+}
+
+.eq i {
+  width: 3px;
+  height: 100%;
+  background: currentColor;
+  transform-origin: bottom;
+  animation: eq 0.9s ease-in-out infinite alternate;
+}
+
+.eq i:nth-child(2) {
+  animation-duration: 0.7s;
+  animation-delay: -0.3s;
+}
+
+.eq i:nth-child(3) {
+  animation-duration: 1.1s;
+  animation-delay: -0.6s;
+}
+
+@keyframes eq {
+  from {
+    transform: scaleY(0.25);
+  }
+  to {
+    transform: scaleY(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .eq i {
+    animation: none;
+    transform: scaleY(0.7);
+  }
+}
+
+/* Lo nuevo: la fila nativa esconde su barra de scroll; con scrub GSAP toma el control. */
+[data-track]::-webkit-scrollbar {
+  display: none;
+}
+
+html.track-scrub [data-track] {
+  overflow: visible;
+  scroll-snap-type: none;
+}

@@ -1,0 +1,61 @@
+---
+/**
+ * Barra fija que aparece cuando el hero queda atrás: nombre, lo que suena y
+ * el botón de suscribirse. Espera fuera de pantalla e `inert` hasta que
+ * motion.ts la baja.
+ *
+ * data-bar        la barra (motion.ts la muestra y la oculta)
+ * data-now        «Sonando · …», visible desde el primer play (player.ts)
+ * data-now-title  texto de la canción que suena
+ */
+import Equalizer from "@/components/ui/Equalizer.astro"
+import SubscribeButton from "@/components/ui/SubscribeButton.astro"
+import { SITE } from "@/config/site"
+
+const links = SITE.navigation.main.filter((item) => item.inBar !== false)
+---
+
+<div
+  data-bar
+  inert
+  class="fixed inset-x-0 top-0 z-40 bg-ink text-white shadow-[0_10px_30px_-12px_rgb(0_0_0/0.5)]"
+>
+  <div class="mx-auto flex h-14 max-w-7xl items-center gap-5 px-4 sm:px-8">
+    <a
+      href="#inicio"
+      class="display text-xl text-sun no-underline"
+    >
+      {SITE.info.name}
+    </a>
+    <p
+      data-now
+      hidden
+      aria-live="polite"
+      class="min-w-0 items-center gap-2 truncate text-sm font-semibold text-white/90 max-sm:hidden sm:flex"
+    >
+      <Equalizer class="shrink-0" />
+      <span
+        data-now-title
+        class="truncate"
+      ></span>
+    </p>
+    <nav
+      aria-label="Secundaria"
+      class="ml-auto hidden lg:block"
+    >
+      <ul class="flex gap-6 text-sm font-semibold">
+        {links.map((item) => (
+          <li>
+            <a
+              href={item.href}
+              class="no-underline decoration-sun decoration-2 hover:underline"
+            >
+              {item.name}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+    <SubscribeButton class="ml-auto shrink-0 px-3 py-1.5 lg:ml-0" />
+  </div>
+</div>

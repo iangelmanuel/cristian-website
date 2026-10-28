@@ -1,0 +1,76 @@
+---
+/**
+ * Reproductor de YouTube con fachada: muestra la miniatura y un botón
+ * «Reproducir». scripts/player.ts cambia la fachada por el iframe solo cuando
+ * el visitante lo pide, así la página no carga YouTube de entrada.
+ *
+ * data-current  video que sonará en este reproductor
+ * data-playing  "true" mientras el iframe está activo
+ * data-facade   botón con la miniatura (se oculta durante la reproducción)
+ */
+import type { ImageMetadata } from "astro"
+import { Image } from "astro:assets"
+import Icon from "@/components/ui/Icon.astro"
+
+interface Props {
+  /** id del contenedor; los botones lo apuntan con data-target. */
+  id: string
+  videoId: string
+  title: string
+  image: ImageMetadata
+  alt: string
+  sizes: string
+  class?: string
+  badge?: "sun" | "white"
+}
+
+const {
+  id,
+  videoId,
+  title,
+  image,
+  alt,
+  sizes,
+  class: className,
+  badge = "sun"
+} = Astro.props
+---
+
+<div
+  id={id}
+  data-current={videoId}
+  data-playing="false"
+  class:list={["relative aspect-video overflow-hidden bg-ink", className]}
+>
+  <button
+    type="button"
+    data-facade
+    data-play={videoId}
+    data-target={id}
+    data-title={title}
+    class="group absolute inset-0 block h-full w-full cursor-pointer"
+  >
+    <Image
+      src={image}
+      alt={alt}
+      widths={[480, 800, 1280]}
+      quality={84}
+      sizes={sizes}
+      loading="lazy"
+      class="h-full w-full object-cover transition-[filter,scale] duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.02] group-hover:brightness-[0.92]"
+    />
+    <span
+      class:list={[
+        "absolute bottom-[6%] left-[4%] flex items-center gap-2.5 py-2.5 pr-5 pl-3.5 text-sm font-bold text-ink uppercase shadow-[0_8px_24px_-8px_rgb(11_36_64/0.55)] transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:-translate-y-0.5 sm:text-base",
+        badge === "sun" ? "bg-sun" : "bg-white"
+      ]}
+    >
+      <Icon
+        name="play"
+        class="size-5"
+      />
+      <span class="[font-stretch:112%]">Reproducir</span>
+      <span class="sr-only">{title}</span>
+    </span>
+  </button>
+</div>

@@ -1,0 +1,18 @@
+.astro
+.vercel
+build
+coverage
+dist
+node_modules
+bun.lock
+bun.lockb
+package-lock.json
+pnpm-lock.yaml
+
+# Herramientas de diseño y skills de terceros
+.agents
+.claude
+.impeccable
+skills-lock.json
+DESIGN.md
+PRODUCT.md

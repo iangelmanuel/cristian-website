@@ -1,0 +1,17 @@
+---
+/** Tres barras que laten mientras suena una canción (estilos `.eq` en global.css). */
+interface Props {
+  class?: string
+}
+
+const { class: className } = Astro.props
+---
+
+<span
+  class:list={["eq", className]}
+  aria-hidden="true"
+>
+  <i></i>
+  <i></i>
+  <i></i>
+</span>

@@ -1,0 +1,27 @@
+---
+/**
+ * La franja de arena al final del mar. El nombre gigante sube letra por letra
+ * (data-foot-name, motion.ts).
+ */
+import { SITE } from "@/config/site"
+
+const year = new Date().getFullYear()
+---
+
+<footer class="on-light overflow-hidden bg-sand px-4 pt-10 text-ink sm:px-8">
+  <div class="mx-auto flex max-w-7xl flex-wrap items-baseline justify-between gap-x-8 gap-y-3">
+    <p class="text-base font-medium text-ink-soft">
+      {SITE.info.slogan}. · {SITE.location.display}
+    </p>
+    <p class="text-sm text-ink-soft">
+      © {year}
+      {SITE.info.name}. Música en YouTube: {SITE.info.youtubeHandle}.
+    </p>
+  </div>
+  <p
+    data-foot-name
+    class="display -mx-1 mt-8 text-center text-[clamp(3rem,15.2vw,24rem)] leading-[0.78] whitespace-nowrap"
+  >
+    {SITE.info.name}
+  </p>
+</footer>

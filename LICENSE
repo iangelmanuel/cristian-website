@@ -1,0 +1,88 @@
+Licencia de Código Visible — Solo Lectura
+(Source-Available, Read-Only License)
+
+Copyright (c) 2026 Angel De La Torre (código fuente)
+Copyright (c) 2025-2026 CRISTIAN (@Cristiansog) (contenido artístico y marca)
+
+Todos los derechos reservados.
+
+1. ALCANCE
+
+   "El Software" es el código fuente de este repositorio: componentes,
+   scripts, estilos, configuración y documentación.
+
+   "El Contenido" es todo lo que pertenece al artista CRISTIAN: su nombre
+   artístico, imagen, fotografías, portadas, miniaturas, música, videos,
+   letras, textos biográficos y cualquier signo que lo identifique, ya sea
+   que esté incluido en el repositorio o enlazado desde él.
+
+2. LO QUE SÍ ESTÁ PERMITIDO
+
+   Se concede, de forma gratuita, no exclusiva y revocable, permiso para:
+
+   a) Ver y leer el Software en este repositorio.
+   b) Estudiarlo con fines personales, educativos o de aprendizaje.
+   c) Ejecutarlo de forma local y privada en tu propio equipo, únicamente
+      para entender cómo funciona.
+   d) Citar fragmentos breves en artículos, clases o reseñas, siempre que
+      se indique la fuente con un enlace a este repositorio.
+
+   Bifurcar (fork) el repositorio dentro de GitHub está permitido solo en la
+   medida en que lo exigen los Términos de Servicio de GitHub; el fork queda
+   sujeto a esta misma licencia.
+
+3. LO QUE NO ESTÁ PERMITIDO
+
+   Sin autorización previa y por escrito del titular correspondiente, no
+   puedes:
+
+   a) Copiar, modificar o crear obras derivadas del Software para usarlas
+      fuera del aprendizaje personal descrito en la sección 2.
+   b) Desplegar, publicar u hospedar el Software, o cualquier versión de
+      él, en un servidor o dominio accesible para terceros.
+   c) Redistribuir, sublicenciar, vender o usar el Software con fines
+      comerciales, incluido su uso como plantilla para otros clientes o
+      artistas.
+   d) Usar, reproducir o distribuir el Contenido de ninguna forma. El
+      Contenido no se licencia bajo ningún concepto.
+   e) Usar el nombre, la imagen o la marca de CRISTIAN, o los de Angel De La
+      Torre, para sugerir respaldo, afiliación o autoría.
+
+4. COMPONENTES DE TERCEROS
+
+   Las dependencias y tipografías de terceros (por ejemplo Astro, Tailwind
+   CSS, GSAP, Three.js y Archivo bajo SIL Open Font License) se rigen por sus
+   propias licencias. Esta licencia no las modifica.
+
+5. TERMINACIÓN
+
+   Cualquier incumplimiento de esta licencia termina de forma automática e
+   inmediata los permisos concedidos. Al terminar, debes eliminar toda copia
+   del Software y del Contenido en tu poder.
+
+6. SIN GARANTÍA
+
+   EL SOFTWARE SE PROPORCIONA "TAL CUAL", SIN GARANTÍA DE NINGÚN TIPO,
+   EXPRESA O IMPLÍCITA, INCLUIDAS, ENTRE OTRAS, LAS GARANTÍAS DE
+   COMERCIABILIDAD, IDONEIDAD PARA UN FIN DETERMINADO Y NO INFRACCIÓN. EN
+   NINGÚN CASO LOS AUTORES O TITULARES DE LOS DERECHOS SERÁN RESPONSABLES DE
+   NINGUNA RECLAMACIÓN, DAÑO U OTRA RESPONSABILIDAD DERIVADA DEL SOFTWARE O
+   DE SU USO.
+
+7. PERMISOS Y CONTACTO
+
+   Para solicitar cualquier uso no cubierto por la sección 2, escribe a
+   iangelmanueldm@gmail.com.
+
+-------------------------------------------------------------------------------
+
+ENGLISH SUMMARY (for convenience; the Spanish text above prevails)
+
+The source code in this repository is made visible for reading and learning
+only. You may view it, study it, run it locally and privately to understand
+it, and quote short excerpts with attribution. You may NOT copy, modify,
+deploy, host, redistribute, sublicense, sell or reuse it as a template
+without prior written permission. All artistic content (CRISTIAN's name,
+image, photos, music, videos, lyrics and brand) is all rights reserved and is
+not licensed in any way. Third-party dependencies keep their own licenses.
+The software is provided "as is", without warranty of any kind.

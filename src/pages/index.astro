@@ -1,0 +1,32 @@
+---
+/**
+ * La landing: un solo cielo que el visitante recorre de arriba abajo, del
+ * mediodía de Exuberante al Caribe de Santa Marta.
+ */
+import Footer from "@/components/layout/Footer.astro"
+import Album from "@/components/sections/Album.astro"
+import Descent from "@/components/sections/Descent.astro"
+import GenreMarquee from "@/components/sections/GenreMarquee.astro"
+import Hero from "@/components/sections/Hero.astro"
+import NightShore from "@/components/sections/NightShore.astro"
+import Singles from "@/components/sections/Singles.astro"
+import Socials from "@/components/sections/Socials.astro"
+import Story from "@/components/sections/Story.astro"
+import Videos from "@/components/sections/Videos.astro"
+import BaseLayout from "@/layouts/BaseLayout.astro"
+---
+
+<BaseLayout>
+  <Hero />
+  <main>
+    <Album />
+    <GenreMarquee />
+    <Singles />
+    <Descent />
+    <Videos />
+    <Story />
+    <NightShore />
+    <Socials />
+  </main>
+  <Footer />
+</BaseLayout>

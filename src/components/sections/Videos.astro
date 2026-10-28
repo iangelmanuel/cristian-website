@@ -1,0 +1,70 @@
+---
+/**
+ * Videos oficiales: uno principal a todo el ancho y el resto en dos columnas.
+ * data-expand: el principal se endereza al entrar (motion.ts).
+ * data-depth:  los demás flotan a distinta profundidad.
+ */
+import SectionTitle from "@/components/ui/SectionTitle.astro"
+import VideoPlayer from "@/components/ui/VideoPlayer.astro"
+import { videos } from "@/data/songs"
+import { songMeta } from "@/libs/format"
+import { thumb } from "@/libs/thumbnails"
+
+const [lead, ...rest] = videos
+---
+
+<section
+  id="videos"
+  aria-labelledby="videos-title"
+  data-ground="indigo"
+  class="bg-indigo px-4 pt-20 pb-24 sm:px-8 sm:pt-28 sm:pb-32"
+>
+  <div class="mx-auto max-w-7xl">
+    <SectionTitle id="videos-title">Videos oficiales</SectionTitle>
+
+    <article
+      class="mt-12"
+      data-expand
+    >
+      <VideoPlayer
+        id={`video-${lead.id}`}
+        videoId={lead.id}
+        title={lead.title}
+        image={thumb(lead.id)}
+        alt={lead.alt}
+        sizes="(min-width: 1152px) 72rem, 100vw"
+        class="shadow-[0_30px_60px_-30px_rgb(0_0_0/0.7)]"
+      />
+      <div class="mt-5 flex flex-wrap items-baseline justify-between gap-x-8 gap-y-2">
+        <h3 class="text-[clamp(2rem,5vw,3.75rem)] leading-none font-black uppercase [font-stretch:122%]">
+          {lead.title}
+        </h3>
+        <p class="tnum text-base font-medium text-white/85">{songMeta(lead)}</p>
+      </div>
+    </article>
+
+    <div class="mt-16 grid gap-x-8 gap-y-14 md:grid-cols-2">
+      {rest.map((video) => (
+        <article data-depth>
+          <VideoPlayer
+            id={`video-${video.id}`}
+            videoId={video.id}
+            title={video.title}
+            image={thumb(video.id)}
+            alt={video.alt}
+            sizes="(min-width: 768px) 36rem, 100vw"
+            badge="white"
+          />
+          <div class="mt-4 flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
+            <h3 class="text-[clamp(1.5rem,2.6vw,2.25rem)] leading-tight font-extrabold uppercase [font-stretch:120%]">
+              {video.title}
+            </h3>
+            <p class="tnum shrink-0 text-sm font-medium text-white/85">
+              {songMeta(video)}
+            </p>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

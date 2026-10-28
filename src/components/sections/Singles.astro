@@ -1,0 +1,84 @@
+---
+/**
+ * Lo nuevo: los sencillos en una fila horizontal.
+ * Sin JavaScript (o con movimiento reducido) la fila usa el scroll nativo.
+ * Con movimiento, motion.ts fija la sección y el scroll vertical la recorre.
+ *
+ * data-singles           la sección que se fija
+ * data-track             la fila que se desplaza
+ * data-slide / -body     cada sencillo y el bloque que crece al llegar al frente
+ * data-singles-progress  la barra amarilla de avance
+ */
+import SectionTitle from "@/components/ui/SectionTitle.astro"
+import VideoPlayer from "@/components/ui/VideoPlayer.astro"
+import { singles } from "@/data/songs"
+import { songMeta } from "@/libs/format"
+import { thumb } from "@/libs/thumbnails"
+
+/** Del más reciente al más antiguo: la fila avanza hacia atrás en el tiempo. */
+const newestFirst = [...singles].sort((a, b) =>
+  b.published.localeCompare(a.published)
+)
+---
+
+<section
+  id="nuevo"
+  aria-labelledby="nuevo-title"
+  data-ground="sky"
+  data-singles
+  class="overflow-hidden bg-sky pt-8 pb-16 sm:pb-20"
+>
+  <div class="mx-auto max-w-7xl px-4 sm:px-8">
+    <div class="flex flex-wrap items-end justify-between gap-x-10 gap-y-3">
+      <SectionTitle id="nuevo-title">Lo nuevo</SectionTitle>
+      <p class="max-w-[38ch] text-base leading-relaxed text-white sm:text-lg">
+        Sencillos publicados después de Exuberante, y «Salmo 1», con el que
+        abrió 2026.
+      </p>
+    </div>
+    <div
+      aria-hidden="true"
+      class="mt-8 h-0.5 bg-white/30"
+    >
+      <div
+        data-singles-progress
+        class="h-full origin-left scale-x-0 bg-sun"
+      ></div>
+    </div>
+  </div>
+
+  <ul
+    data-track
+    class="mt-10 flex snap-x snap-mandatory gap-5 overflow-x-auto px-4 pb-2 [scrollbar-width:none] sm:gap-10 sm:px-8 lg:px-[max(2rem,calc((100vw-80rem)/2+2rem))]"
+  >
+    {newestFirst.map((song) => (
+      <li
+        data-slide
+        class="w-[84vw] shrink-0 snap-start sm:w-[66vw] lg:w-[min(52vw,56rem)]"
+      >
+        <div
+          data-slide-body
+          class="origin-bottom-left"
+        >
+          <VideoPlayer
+            id={`single-${song.id}`}
+            videoId={song.id}
+            title={song.title}
+            image={thumb(song.id)}
+            alt={song.alt}
+            sizes="(min-width: 1024px) 52vw, 84vw"
+            class="shadow-[0_24px_50px_-24px_rgb(11_36_64/0.55)]"
+          />
+          <div class="mt-5 flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
+            <h3 class="text-[clamp(1.5rem,3vw,2.75rem)] leading-none font-black uppercase [font-stretch:122%]">
+              {song.title}
+            </h3>
+            <p class="tnum shrink-0 text-sm font-medium text-white sm:text-base">
+              {songMeta(song)}
+            </p>
+          </div>
+        </div>
+      </li>
+    ))}
+  </ul>
+</section>

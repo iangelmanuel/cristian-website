@@ -1,0 +1,26 @@
+---
+/** Botón blanco «Suscribirme» que lleva al canal de YouTube. */
+import Icon from "@/components/ui/Icon.astro"
+import { SITE } from "@/config/site"
+
+interface Props {
+  class?: string
+}
+
+const { class: className } = Astro.props
+const { cta } = SITE.navigation
+---
+
+<a
+  href={cta.href}
+  class:list={[
+    "inline-flex items-center gap-2 bg-white text-sm font-bold text-ink no-underline transition-colors hover:bg-sun",
+    className
+  ]}
+>
+  <Icon
+    name="youtube"
+    class="size-4 text-[#e00]"
+  />
+  {cta.label}
+</a>

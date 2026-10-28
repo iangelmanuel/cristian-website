@@ -1,0 +1,57 @@
+---
+/**
+ * Esqueleto HTML de la página: <head> con SEO, barra fija y el JavaScript
+ * de la landing (scripts/main.ts).
+ */
+import BaseHead from "@/components/seo/BaseHead.astro"
+import JsonLd from "@/components/seo/JsonLd.astro"
+import SkipLink from "@/components/layout/SkipLink.astro"
+import StickyBar from "@/components/layout/StickyBar.astro"
+import { SITE } from "@/config/site"
+import { musicGroupLd, webSiteLd } from "@/libs/seo"
+import "@/styles/global.css"
+
+interface Props {
+  title?: string
+  description?: string
+}
+
+const { title, description } = Astro.props
+---
+
+<!doctype html>
+<html lang={SITE.site.lang}>
+  <head>
+    <BaseHead
+      title={title}
+      description={description}
+    />
+    <link
+      rel="preconnect"
+      href="https://www.youtube-nocookie.com"
+    />
+    <JsonLd
+      id="ld-artist"
+      data={musicGroupLd()}
+    />
+    <JsonLd
+      id="ld-website"
+      data={webSiteLd()}
+    />
+
+    <!-- La entrada del hero se oculta un instante solo si va a animarse. -->
+    <script is:inline>
+      if (matchMedia("(prefers-reduced-motion: no-preference)").matches) {
+        document.documentElement.classList.add("intro")
+      }
+    </script>
+  </head>
+  <body>
+    <SkipLink />
+    <StickyBar />
+    <slot />
+    <script>
+      import "@/scripts/main"
+    </script>
+  </body>
+</html>

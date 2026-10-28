@@ -1,0 +1,105 @@
+---
+/**
+ * Exuberante: reproductor fijo a la izquierda y la lista de canciones.
+ * Cada fila es un botón que reproduce su canción en #album-player;
+ * aria-pressed marca la que suena (player.ts).
+ */
+import Equalizer from "@/components/ui/Equalizer.astro"
+import Icon from "@/components/ui/Icon.astro"
+import VideoPlayer from "@/components/ui/VideoPlayer.astro"
+import { SITE } from "@/config/site"
+import { album } from "@/data/songs"
+import { duration, monthYear } from "@/libs/format"
+import { thumb } from "@/libs/thumbnails"
+
+const firstTrack = album.tracks[0]
+const totalSeconds = album.tracks.reduce((sum, song) => sum + song.seconds, 0)
+const totalMinutes = Math.round(totalSeconds / 60)
+const trackNumber = (index: number) => String(index + 1).padStart(2, "0")
+---
+
+<section
+  id="musica"
+  aria-labelledby="album-title"
+  data-ground="haze-hi"
+  class="on-light bg-haze-hi px-4 pt-20 pb-24 text-ink sm:px-8 sm:pt-28 sm:pb-32"
+>
+  <div class="mx-auto max-w-7xl">
+    <h2
+      id="album-title"
+      class="display text-[clamp(2.25rem,10vw,8.25rem)]"
+    >
+      <span class="sr-only">Álbum </span>
+      {album.title}
+    </h2>
+    <p class="mt-4 text-base font-medium text-ink-soft sm:text-lg">
+      Álbum · {monthYear(album.published)} · {album.tracks.length} canciones ·
+      {totalMinutes} min
+    </p>
+  </div>
+
+  <div class="mx-auto mt-10 grid max-w-7xl gap-x-14 gap-y-10 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)]">
+    <div class="lg:sticky lg:top-20 lg:self-start">
+      <VideoPlayer
+        id="album-player"
+        videoId={firstTrack.id}
+        title={firstTrack.title}
+        image={thumb(firstTrack.id)}
+        alt={album.coverAlt}
+        sizes="(min-width: 1024px) 50vw, 100vw"
+        class="shadow-[0_24px_50px_-24px_rgb(11_36_64/0.55)]"
+      />
+
+      <a
+        href={SITE.social.spotify}
+        class="mt-6 inline-flex items-center gap-2 text-base font-semibold text-ink underline decoration-ink/40 hover:decoration-ink"
+      >
+        <Icon
+          name="spotify"
+          class="size-5"
+        />
+        Escuchar {album.title} en Spotify
+      </a>
+    </div>
+
+    <ol
+      class="border-t-2 border-ink"
+      aria-label={`Canciones de ${album.title}`}
+    >
+      {album.tracks.map((song, index) => (
+        <li
+          class="border-b border-ink/25"
+          data-row
+        >
+          <button
+            type="button"
+            data-play={song.id}
+            data-target="album-player"
+            data-title={song.title}
+            data-scroll="true"
+            aria-pressed="false"
+            class="group grid w-full cursor-pointer grid-cols-[2.25rem_1fr_auto] items-baseline gap-x-3 px-2 py-5 text-left transition-colors duration-200 hover:bg-white/45 aria-pressed:bg-sun sm:grid-cols-[3rem_1fr_auto] sm:py-6"
+          >
+            <span class="tnum text-sm font-semibold text-ink-soft sm:text-base">
+              {trackNumber(index)}
+            </span>
+            <span class="flex items-center gap-3 text-[clamp(1.35rem,3.2vw,2.15rem)] leading-tight font-extrabold [font-stretch:118%]">
+              {song.title}
+              <span class="hidden items-center gap-2 text-xs font-bold tracking-wide uppercase group-aria-pressed:inline-flex">
+                <Equalizer />
+                Sonando
+              </span>
+            </span>
+            <span class="tnum flex items-center gap-3 text-sm font-semibold text-ink-soft sm:text-base">
+              {duration(song.seconds)}
+              <Icon
+                name="play"
+                class="size-4 text-ink opacity-0 transition-opacity group-hover:opacity-100 group-focus-visible:opacity-100"
+              />
+            </span>
+          </button>
+        </li>
+      ))}
+    </ol>
+  </div>
+</section>

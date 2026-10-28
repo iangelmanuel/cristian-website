@@ -1,0 +1,29 @@
+---
+/**
+ * Sus tres ritmos cruzan el cielo mientras el visitante baja.
+ * data-rhythm: la fila que motion.ts desplaza en sentido contrario al scroll.
+ */
+import { SITE } from "@/config/site"
+
+/** La fila se repite para que nunca se vea su final al desplazarse. */
+const REPEAT = 4
+const genres = Array.from({ length: REPEAT }, () => SITE.info.genres).flat()
+---
+
+<div
+  aria-hidden="true"
+  data-ground="haze-hi>sky"
+  class="flex h-[26svh] min-h-40 items-center overflow-hidden bg-[linear-gradient(to_bottom,var(--color-haze-hi),var(--color-sky))]"
+>
+  <p
+    data-rhythm
+    class="display flex shrink-0 items-center gap-[0.35em] text-[clamp(3rem,9vw,8rem)] whitespace-nowrap text-white"
+  >
+    {genres.map((genre) => (
+      <>
+        <span>{genre}</span>
+        <span class="inline-block size-[0.32em] rounded-full bg-sun" />
+      </>
+    ))}
+  </p>
+</div>

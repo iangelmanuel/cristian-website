@@ -1,0 +1,64 @@
+---
+/**
+ * La cámara baja del cielo hasta el mar de Santa Marta y sigue bajando hasta
+ * tocar el agua. Es decorativo (aria-hidden).
+ *
+ * data-descent (-photo, -word, -note)  escena fijada del descenso (motion.ts)
+ * data-sea / data-sea-canvas           el mar WebGL (sea.ts); sin WebGL queda
+ *                                      el degradado de CSS
+ */
+import { Image } from "astro:assets"
+import photo from "@/assets/santa-marta.jpg"
+---
+
+<div
+  aria-hidden="true"
+  data-ground="sky>indigo"
+  data-ground-keep
+  data-ground-late
+  class="relative isolate bg-sky"
+>
+  <div
+    data-descent
+    class="relative h-[100svh] min-h-[32rem] overflow-hidden"
+  >
+    <Image
+      src={photo}
+      alt=""
+      widths={[828, 1280, 1920, 2560, 3157]}
+      sizes="(min-aspect-ratio: 16/9) 100vw, 178svh"
+      quality={86}
+      data-descent-photo
+      class="absolute inset-0 h-full w-full object-cover object-[68%_50%]"
+    />
+    <!-- El cielo de la página entra por arriba y vuelve a cerrarse abajo, hacia el mar. -->
+    <div class="absolute inset-x-0 top-0 z-10 h-[28%] bg-[linear-gradient(to_bottom,var(--color-sky),transparent)]"></div>
+    <div class="absolute inset-x-0 bottom-0 z-10 h-[30%] bg-[linear-gradient(to_bottom,transparent,var(--color-sky)_88%)]"></div>
+
+    <p
+      data-descent-word
+      class="display absolute inset-x-0 top-[9%] z-20 px-3 text-center text-[18vw] text-sun sm:px-6 sm:text-[clamp(3rem,11vw,18rem)]"
+    >
+      Santa Marta
+    </p>
+    <p
+      data-descent-note
+      class="absolute right-4 bottom-[22%] z-20 text-right text-sm font-bold tracking-wide text-white uppercase [font-stretch:115%] sm:right-8 sm:text-base"
+    >
+      Colombia · Mar Caribe
+    </p>
+  </div>
+
+  <!-- El mar de Exuberante: cielo cerúleo, horizonte de bruma y agua azul con el brillo blanco del mediodía. -->
+  <div
+    data-sea
+    class="relative h-[110svh] min-h-[34rem] overflow-hidden bg-[linear-gradient(to_bottom,var(--color-sky)_0%,var(--color-haze-hi)_12%,#2f6fa6_15%,#174f8a_60%,var(--color-indigo)_100%)]"
+  >
+    <canvas
+      data-sea-canvas
+      class="absolute inset-0 h-full w-full opacity-0 transition-opacity duration-700"
+    ></canvas>
+    <div class="pointer-events-none absolute inset-x-0 top-0 h-[18%] bg-[linear-gradient(to_bottom,var(--color-sky),transparent)]"></div>
+    <div class="pointer-events-none absolute inset-x-0 bottom-0 h-[24%] bg-[linear-gradient(to_bottom,transparent,var(--color-indigo))]"></div>
+  </div>
+</div>

@@ -1,0 +1,25 @@
+---
+/**
+ * La noche llega al mar: línea de horizonte y luego el Caribe de Santa Marta.
+ * Es decorativo (aria-hidden). data-horizon: la línea que se abre desde el
+ * centro (motion.ts).
+ */
+---
+
+<div
+  aria-hidden="true"
+  data-ground="night"
+  data-ground-keep
+  class="relative isolate"
+>
+  <div class="h-[16svh] min-h-24 bg-[linear-gradient(to_bottom,var(--color-night),#14305e_80%,#2a4677)]"></div>
+  <div
+    data-horizon
+    class="h-px bg-[linear-gradient(to_right,transparent,rgb(255_244_214/0.7)_50%,transparent)]"
+  ></div>
+  <div class="relative h-[22svh] min-h-32 overflow-hidden bg-[linear-gradient(to_bottom,#0b2e4c,var(--color-sea-deep))]">
+    <!-- Reflejo de luz sobre el agua y el leve oleaje del Caribe. -->
+    <div class="absolute inset-y-0 left-1/2 w-[38vmin] -translate-x-1/2 bg-[radial-gradient(50%_100%_at_50%_0%,rgb(255_236_200/0.32),transparent_75%)]"></div>
+    <div class="absolute inset-0 [mask-image:linear-gradient(to_bottom,black,transparent)] bg-[repeating-linear-gradient(to_bottom,rgb(255_255_255/0.07)_0_1px,transparent_1px_14px)]"></div>
+  </div>
+</div>

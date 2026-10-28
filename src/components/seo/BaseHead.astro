@@ -1,0 +1,157 @@
+---
+/**
+ * Todo el <head> común: título, descripción, canonical, robots, Open Graph,
+ * Twitter, iconos y manifest. Los valores salen de SITE; las metas sin valor
+ * (null) no se imprimen.
+ */
+import { SITE } from "@/config/site"
+
+interface Props {
+  title?: string
+  description?: string
+  image?: string
+  canonical?: string
+  noindex?: boolean
+}
+
+const {
+  title,
+  description = SITE.seo.description,
+  image = SITE.seo.image,
+  canonical = new URL(Astro.url.pathname, SITE.seo.url).href,
+  noindex = SITE.seo.noindex
+} = Astro.props
+
+const pageTitle = title ? `${title} — ${SITE.info.name}` : SITE.seo.title
+const ogImage = new URL(image, SITE.seo.url).href
+const ogLocale = SITE.seo.locale.replace("-", "_")
+const robots = noindex ? "noindex, nofollow" : "index, follow"
+const { latitude, longitude, region } = SITE.seo.geo
+const hasGeo = latitude !== null && longitude !== null
+---
+
+<meta charset="utf-8" />
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1"
+/>
+<title>{pageTitle}</title>
+<meta
+  name="description"
+  content={description}
+/>
+<link
+  rel="canonical"
+  href={canonical}
+/>
+<meta
+  name="robots"
+  content={robots}
+/>
+<meta
+  name="keywords"
+  content={SITE.seo.keywords.join(", ")}
+/>
+<meta
+  name="author"
+  content={SITE.seo.author}
+/>
+<meta
+  name="generator"
+  content={Astro.generator}
+/>
+<meta
+  name="referrer"
+  content="strict-origin-when-cross-origin"
+/>
+<meta
+  name="theme-color"
+  content={SITE.seo.themeColor}
+/>
+
+{/* Open Graph y Twitter */}
+<meta
+  property="og:type"
+  content={SITE.seo.ogType}
+/>
+<meta
+  property="og:site_name"
+  content={SITE.info.name}
+/>
+<meta
+  property="og:title"
+  content={pageTitle}
+/>
+<meta
+  property="og:description"
+  content={description}
+/>
+<meta
+  property="og:url"
+  content={canonical}
+/>
+<meta
+  property="og:locale"
+  content={ogLocale}
+/>
+<meta
+  property="og:image"
+  content={ogImage}
+/>
+<meta
+  property="og:image:width"
+  content={String(SITE.seo.imageWidth)}
+/>
+<meta
+  property="og:image:height"
+  content={String(SITE.seo.imageHeight)}
+/>
+<meta
+  property="og:image:alt"
+  content={SITE.seo.imageAlt}
+/>
+<meta
+  name="twitter:card"
+  content={SITE.seo.twitterCard}
+/>
+{SITE.seo.twitterHandle && (
+  <meta
+    name="twitter:site"
+    content={SITE.seo.twitterHandle}
+  />
+)}
+
+{/* Ubicación */}
+<meta
+  name="geo.region"
+  content={`${SITE.location.countryCode}-${region}`}
+/>
+<meta
+  name="geo.placename"
+  content={SITE.location.city}
+/>
+{hasGeo && (
+  <meta
+    name="geo.position"
+    content={`${latitude};${longitude}`}
+  />
+)}
+
+{/* Iconos y app */}
+<link
+  rel="icon"
+  type="image/png"
+  href="/icon.png"
+/>
+<link
+  rel="apple-touch-icon"
+  href="/icon.png"
+/>
+<link
+  rel="manifest"
+  href="/manifest.webmanifest"
+/>
+<meta
+  name="apple-mobile-web-app-title"
+  content={SITE.info.name}
+/>

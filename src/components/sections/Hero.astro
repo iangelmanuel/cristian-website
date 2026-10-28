@@ -1,0 +1,110 @@
+---
+/**
+ * Portada: nombre gigante, su foto fundida con el cielo y el botón para
+ * escuchar la canción destacada.
+ *
+ * data-hero-name / -photo / -copy  piezas de la entrada animada (motion.ts);
+ *                                  html.intro las oculta hasta que GSAP arranca
+ * #hero-player                     reproductor que abre el botón principal
+ */
+import { Image } from "astro:assets"
+import avatar from "@/assets/avatar.jpg"
+import Icon from "@/components/ui/Icon.astro"
+import SubscribeButton from "@/components/ui/SubscribeButton.astro"
+import { SITE } from "@/config/site"
+import { album, featured } from "@/data/songs"
+---
+
+<header
+  id="inicio"
+  data-ground="haze-hi"
+  data-ground-keep
+  class="relative isolate flex min-h-[100svh] flex-col overflow-hidden bg-[linear-gradient(to_bottom,var(--color-zenith)_0%,#4c86b2_26%,#78a7c8_52%,var(--color-haze)_72%,var(--color-haze-hi)_100%)]"
+>
+  <nav
+    aria-label="Principal"
+    class="relative z-10 flex items-center justify-between gap-6 px-4 pt-4 sm:px-8 sm:pt-6"
+  >
+    <ul class="hidden gap-7 text-sm font-semibold text-white md:flex">
+      {SITE.navigation.main.map((item) => (
+        <li>
+          <a
+            href={item.href}
+            class="no-underline decoration-sun decoration-2 hover:underline"
+          >
+            {item.name}
+          </a>
+        </li>
+      ))}
+    </ul>
+    <p class="text-sm font-semibold text-white md:hidden">
+      {SITE.location.display}
+    </p>
+    <SubscribeButton class="px-3.5 py-2" />
+  </nav>
+
+  <h1
+    data-hero-name
+    class="display relative z-10 px-3 pt-6 text-[clamp(3rem,14.6vw,22rem)] text-sun sm:px-6 sm:pt-8"
+  >
+    {SITE.info.name}
+  </h1>
+
+  <div class="relative flex flex-1 flex-col justify-end">
+    <!-- Su foto: el cielo de la imagen se funde con el cielo de la página. -->
+    <Image
+      src={avatar}
+      alt="CRISTIAN con los ojos cerrados y el rostro hacia el cielo, sonriendo"
+      widths={[480, 720, 960, 1189]}
+      quality={86}
+      sizes="(min-width: 1024px) 50vw, 100vw"
+      loading="eager"
+      fetchpriority="high"
+      data-hero-photo
+      class="hero-photo pointer-events-none absolute top-0 right-0 -z-10 h-auto w-[min(100%,52svh)] lg:top-auto lg:bottom-0 lg:w-[52%] lg:max-w-[46rem]"
+    />
+
+    <div
+      data-hero-copy
+      class="on-light relative max-w-xl px-4 pb-8 sm:px-8 sm:pb-12 lg:pb-16"
+    >
+      <p class="text-[clamp(1.5rem,3.4vw,2.5rem)] leading-[1.05] font-bold text-ink [font-stretch:112%]">
+        {SITE.info.slogan}.
+      </p>
+      <p class="mt-3 max-w-[34ch] text-base leading-relaxed text-ink-soft sm:text-lg">
+        Salsa, urbano y adoración desde {SITE.location.display}. Su álbum
+        <em class="font-semibold text-ink not-italic">{album.title}</em> ya está
+        sonando.
+      </p>
+
+      <div class="mt-7 flex flex-wrap items-center gap-3">
+        <button
+          type="button"
+          data-play={featured.id}
+          data-target="hero-player"
+          data-title={featured.title}
+          class="inline-flex cursor-pointer items-center gap-3 bg-sun py-3.5 pr-6 pl-4 text-base font-extrabold text-ink uppercase shadow-[0_10px_30px_-10px_rgb(11_36_64/0.6)] transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] [font-stretch:115%] hover:-translate-y-0.5 sm:text-lg"
+        >
+          <Icon
+            name="play"
+            class="size-6"
+          />
+          Escuchar «{featured.title}»
+        </button>
+        <a
+          href="#musica"
+          class="px-2 py-3 text-base font-semibold text-ink underline decoration-ink/40 hover:decoration-ink"
+        >
+          Ver el álbum completo
+        </a>
+      </div>
+
+      <div
+        id="hero-player"
+        hidden
+        data-current={featured.id}
+        class="relative mt-6 aspect-video w-full max-w-lg overflow-hidden bg-ink shadow-[0_18px_40px_-16px_rgb(11_36_64/0.7)]"
+      ></div>
+    </div>
+  </div>
+</header>

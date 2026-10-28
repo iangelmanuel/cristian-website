@@ -1,0 +1,51 @@
+---
+/** Desde Santa Marta: la lista de redes. Cada fila entera es el enlace. */
+import Icon from "@/components/ui/Icon.astro"
+import SectionTitle from "@/components/ui/SectionTitle.astro"
+import { SOCIALS } from "@/config/site"
+---
+
+<section
+  id="redes"
+  aria-labelledby="redes-title"
+  data-ground="night"
+  data-ground-keep
+  class="bg-[linear-gradient(to_bottom,var(--color-sea-deep),var(--color-sea)_55%,#138a8f)] px-4 pt-20 pb-24 sm:px-8 sm:pt-28 sm:pb-28"
+>
+  <div class="mx-auto max-w-7xl">
+    <SectionTitle id="redes-title">Desde Santa Marta</SectionTitle>
+    <p class="mt-5 max-w-[46ch] text-lg leading-relaxed text-white/90">
+      Escucha, suscríbete y acompaña lo que viene. Cada canción nueva sale
+      primero en su canal.
+    </p>
+
+    <ul class="mt-12 border-t-2 border-white">
+      {SOCIALS.map((social) => (
+        <li
+          class="border-b border-white/35"
+          data-row
+        >
+          <a
+            href={social.url}
+            class="group flex items-center gap-4 py-6 text-white no-underline transition-colors duration-200 hover:text-sun sm:gap-6 sm:py-7"
+          >
+            <Icon
+              name={social.id}
+              class="size-7 shrink-0 sm:size-9"
+            />
+            <span class="text-[clamp(1.6rem,4.4vw,3.25rem)] leading-none font-black uppercase [font-stretch:122%]">
+              {social.label}
+            </span>
+            <span class="ml-auto hidden text-lg font-medium text-white/85 group-hover:text-sun sm:inline">
+              {social.handle}
+            </span>
+            <Icon
+              name="arrow"
+              class="size-6 shrink-0 transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:translate-x-1 group-hover:-translate-y-1 max-sm:ml-auto sm:size-7"
+            />
+          </a>
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>

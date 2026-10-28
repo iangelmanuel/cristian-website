@@ -1,0 +1,19 @@
+---
+/**
+ * Título de sección en la voz de Exuberante: amarillo, expandido y en
+ * mayúsculas. motion.ts anima su ancho al entrar en pantalla (`h2.display`).
+ */
+interface Props {
+  id: string
+  class?: string
+}
+
+const { id, class: className = "text-sun" } = Astro.props
+---
+
+<h2
+  id={id}
+  class:list={["display text-[clamp(2.75rem,8vw,6rem)]", className]}
+>
+  <slot />
+</h2>

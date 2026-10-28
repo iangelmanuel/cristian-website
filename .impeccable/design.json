@@ -1,0 +1,461 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-24T02:57:26.591Z",
+  "title": "Design System: CRISTIAN",
+  "extensions": {
+    "colorMeta": {
+      "zenith": {
+        "role": "ground",
+        "displayName": "Zenith Blue",
+        "canonical": "oklch(49.1% 0.097 245)",
+        "tonalRamp": [
+          "#000a27",
+          "#00264e",
+          "#004572",
+          "#2b6695",
+          "#4d88b9",
+          "#70abde",
+          "#97d0ff",
+          "#c7f4ff"
+        ]
+      },
+      "sky": {
+        "role": "ground",
+        "displayName": "Midday Sky",
+        "canonical": "oklch(55.2% 0.096 243)",
+        "tonalRamp": [
+          "#000b27",
+          "#00274d",
+          "#004671",
+          "#276693",
+          "#4b89b8",
+          "#6eacdd",
+          "#94d1ff",
+          "#c5f5ff"
+        ]
+      },
+      "haze": {
+        "role": "ground",
+        "displayName": "Haze",
+        "canonical": "oklch(72.7% 0.064 239)",
+        "tonalRamp": [
+          "#000c22",
+          "#002840",
+          "#1d4660",
+          "#3d6682",
+          "#5e88a5",
+          "#80abc9",
+          "#a4d0ef",
+          "#c8f5ff"
+        ]
+      },
+      "haze-hi": {
+        "role": "ground",
+        "displayName": "High Haze",
+        "canonical": "oklch(80.7% 0.045 237)",
+        "tonalRamp": [
+          "#000d1b",
+          "#0d2838",
+          "#2a4657",
+          "#496578",
+          "#69879a",
+          "#8baabe",
+          "#afcee3",
+          "#d4f4ff"
+        ]
+      },
+      "dusk": {
+        "role": "ground",
+        "displayName": "Dusk Blue",
+        "canonical": "oklch(45.2% 0.138 256)",
+        "tonalRamp": [
+          "#000829",
+          "#002350",
+          "#12417b",
+          "#2861a9",
+          "#4a83cf",
+          "#76a7ea",
+          "#a2ccff",
+          "#cff1ff"
+        ]
+      },
+      "ember": {
+        "role": "ground",
+        "displayName": "Horizon Ember",
+        "canonical": "oklch(77.8% 0.119 53)",
+        "tonalRamp": [
+          "#200000",
+          "#451300",
+          "#6d2c00",
+          "#944b0a",
+          "#b96c36",
+          "#db9160",
+          "#f9b990",
+          "#ffe2c1"
+        ]
+      },
+      "indigo": {
+        "role": "ground",
+        "displayName": "Night Indigo",
+        "canonical": "oklch(33.6% 0.139 261)",
+        "tonalRamp": [
+          "#000729",
+          "#092251",
+          "#1e3f7c",
+          "#355eaa",
+          "#5580d0",
+          "#7ea5eb",
+          "#a8caff",
+          "#d4f0ff"
+        ]
+      },
+      "night": {
+        "role": "ground",
+        "displayName": "Night",
+        "canonical": "oklch(24.3% 0.079 262)",
+        "tonalRamp": [
+          "#000729",
+          "#0f234b",
+          "#2b416c",
+          "#49618f",
+          "#6982b2",
+          "#8ba5d8",
+          "#aecafe",
+          "#d5efff"
+        ]
+      },
+      "sea-deep": {
+        "role": "ground",
+        "displayName": "Deep Sea",
+        "canonical": "oklch(33.1% 0.057 220)",
+        "tonalRamp": [
+          "#000f1c",
+          "#002b38",
+          "#184957",
+          "#3a6978",
+          "#5b8b9a",
+          "#7daebe",
+          "#a1d2e3",
+          "#c5f8ff"
+        ]
+      },
+      "sea": {
+        "role": "ground",
+        "displayName": "Caribbean Teal",
+        "canonical": "oklch(48.3% 0.080 205)",
+        "tonalRamp": [
+          "#00121a",
+          "#002f37",
+          "#004d56",
+          "#116e77",
+          "#3e9099",
+          "#63b4bd",
+          "#88d9e2",
+          "#b4fdff"
+        ]
+      },
+      "sand": {
+        "role": "neutral",
+        "displayName": "Shoreline Sand",
+        "canonical": "oklch(92.2% 0.045 87)",
+        "tonalRamp": [
+          "#130900",
+          "#2e2308",
+          "#4c4125",
+          "#6c6044",
+          "#8e8164",
+          "#b1a485",
+          "#d6c8a9",
+          "#fbedcd"
+        ]
+      },
+      "sun": {
+        "role": "primary",
+        "displayName": "Exuberante Highlighter",
+        "canonical": "oklch(96.6% 0.208 110)",
+        "tonalRamp": [
+          "#0e0c00",
+          "#282800",
+          "#464600",
+          "#666600",
+          "#87890b",
+          "#a8ab54",
+          "#cccf88",
+          "#f0f4bb"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Cover Ink",
+        "canonical": "oklch(25.8% 0.061 253)",
+        "tonalRamp": [
+          "#000a24",
+          "#0d2642",
+          "#2a4362",
+          "#486384",
+          "#6985a7",
+          "#8aa8cb",
+          "#aeccf1",
+          "#d2f2ff"
+        ]
+      },
+      "ink-soft": {
+        "role": "neutral",
+        "displayName": "Soft Ink",
+        "canonical": "oklch(35.3% 0.069 251)",
+        "tonalRamp": [
+          "#000a27",
+          "#052645",
+          "#244465",
+          "#436487",
+          "#6386ab",
+          "#85a9d0",
+          "#a8cdf5",
+          "#cdf3ff"
+        ]
+      },
+      "tee-white": {
+        "role": "neutral",
+        "displayName": "White Tee",
+        "canonical": "oklch(100.0% 0.000 89)",
+        "tonalRamp": [
+          "#0b0b0b",
+          "#252525",
+          "#424242",
+          "#616161",
+          "#828282",
+          "#a5a5a5",
+          "#c9c9c9",
+          "#eeeeee"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Region names, in sun on dark ground and ink on haze-hi or sand; the footer wordmark."
+      },
+      "display-hero": {
+        "displayName": "Display Hero",
+        "purpose": "The artist name set edge to edge across the first viewport."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Titles under media (singles, secondary videos)."
+      },
+      "headline-row": {
+        "displayName": "Headline Row",
+        "purpose": "Channel names in the shore list."
+      },
+      "title-track": {
+        "displayName": "Track Title",
+        "purpose": "Tracklist song titles, sentence case."
+      },
+      "lead": {
+        "displayName": "Lead",
+        "purpose": "The hero tagline."
+      },
+      "quote": {
+        "displayName": "Quote",
+        "purpose": "The scripture blockquote."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Reading text, max 62ch."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "The primary play button."
+      },
+      "meta": {
+        "displayName": "Meta",
+        "purpose": "Dates, durations, track numbers; tabular numerals."
+      }
+    },
+    "shadows": [
+      {
+        "name": "action-lift",
+        "value": "0 10px 30px -10px rgb(11 36 64 / 0.6)",
+        "purpose": "Hero play button."
+      },
+      {
+        "name": "badge-lift",
+        "value": "0 8px 24px -8px rgb(11 36 64 / 0.55)",
+        "purpose": "Play badge on every player."
+      },
+      {
+        "name": "player-hang-hero",
+        "value": "0 18px 40px -16px rgb(11 36 64 / 0.7)",
+        "purpose": "Hero player frame on pale sky."
+      },
+      {
+        "name": "player-hang",
+        "value": "0 24px 50px -24px rgb(11 36 64 / 0.55)",
+        "purpose": "Album player frame on haze-hi."
+      },
+      {
+        "name": "night-hang",
+        "value": "0 30px 60px -30px rgb(0 0 0 / 0.7)",
+        "purpose": "Lead video frame on indigo."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-out-expo",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "All lifts and moves: buttons and badges 300ms, player art scale and dim 500ms, channel arrow 300ms."
+      },
+      {
+        "name": "color-state",
+        "value": "200ms ease",
+        "purpose": "Row hover tints and color changes."
+      },
+      {
+        "name": "ground-shift",
+        "value": "background-color 0.25s linear",
+        "purpose": "Body --ground color mixed from the region at the viewport midline on scroll (rAF-throttled); off with reduced motion or without JS, where stepped bands show."
+      },
+      {
+        "name": "sunset",
+        "value": "animation-timeline: view(); animation-range: cover 10% cover 85%",
+        "purpose": "Sun and glow drop through the dusk band; static half-set without scroll-timeline support or with reduced motion."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "0.01ms",
+        "purpose": "All animation and transition durations under prefers-reduced-motion; smooth scrolling off."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "sm",
+        "value": "640px"
+      },
+      {
+        "name": "md",
+        "value": "768px"
+      },
+      {
+        "name": "lg",
+        "value": "1024px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Play Button",
+      "kind": "button",
+      "refersTo": "button-play",
+      "description": "The primary action: plays a song in place. Sun on ink, uppercase, square.",
+      "html": "<button type=\"button\" class=\"ds-btn-play\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\" fill=\"currentColor\"><path d=\"M7 4.5v15a1 1 0 0 0 1.52.85l12.2-7.5a1 1 0 0 0 0-1.7L8.52 3.65A1 1 0 0 0 7 4.5Z\"/></svg>Escuchar «Te Adoro»</button>",
+      "css": ".ds-btn-play { font-family: var(--font-sans, 'Archivo Variable', system-ui, sans-serif); display: inline-flex; align-items: center; gap: 12px; background: var(--color-sun, #fcff1c); color: var(--color-ink, #0b2440); padding: 14px 24px 14px 16px; border: 0; border-radius: 0; font-size: 1.125rem; font-weight: 800; font-stretch: 115%; text-transform: uppercase; cursor: pointer; box-shadow: 0 10px 30px -10px rgb(11 36 64 / 0.6); transition: transform 300ms cubic-bezier(0.16, 1, 0.3, 1); } .ds-btn-play svg { width: 24px; height: 24px; } .ds-btn-play:hover { transform: translateY(-2px); } .ds-btn-play:focus-visible { outline: 3px solid var(--color-ink, #0b2440); outline-offset: 3px; }"
+    },
+    {
+      "name": "Subscribe Button",
+      "kind": "button",
+      "refersTo": "button-subscribe",
+      "description": "Compact white button for the YouTube subscription; turns sun on hover.",
+      "html": "<a href=\"#\" class=\"ds-btn-sub\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\" fill=\"currentColor\"><path d=\"M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8ZM9.6 15.6V8.4l6.3 3.6-6.3 3.6Z\"/></svg>Suscribirme</a>",
+      "css": ".ds-btn-sub { font-family: var(--font-sans, 'Archivo Variable', system-ui, sans-serif); display: inline-flex; align-items: center; gap: 8px; background: #fff; color: var(--color-ink, #0b2440); padding: 8px 14px; border-radius: 0; font-size: 0.875rem; font-weight: 700; text-decoration: none; transition: background-color 150ms; } .ds-btn-sub svg { width: 16px; height: 16px; color: #e00; } .ds-btn-sub:hover { background: var(--color-sun, #fcff1c); } .ds-btn-sub:focus-visible { outline: 3px solid var(--color-sun, #fcff1c); outline-offset: 3px; }"
+    },
+    {
+      "name": "Player Facade",
+      "kind": "custom",
+      "refersTo": "player-frame",
+      "description": "Ink 16:9 frame with release art and a square play badge; a click swaps in the youtube-nocookie iframe in place, one player at a time.",
+      "html": "<div class=\"ds-player\"><button type=\"button\" class=\"ds-player-hit\"><span class=\"ds-player-art\"></span><span class=\"ds-player-badge\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\" fill=\"currentColor\"><path d=\"M7 4.5v15a1 1 0 0 0 1.52.85l12.2-7.5a1 1 0 0 0 0-1.7L8.52 3.65A1 1 0 0 0 7 4.5Z\"/></svg><span>Reproducir</span></span></button></div>",
+      "css": ".ds-player { position: relative; aspect-ratio: 16 / 9; width: 360px; max-width: 100%; overflow: hidden; background: var(--color-ink, #0b2440); box-shadow: 0 24px 50px -24px rgb(11 36 64 / 0.55); } .ds-player-hit { position: absolute; inset: 0; border: 0; padding: 0; background: none; cursor: pointer; } .ds-player-art { position: absolute; inset: 0; background: var(--color-sky, #3a78a6); transition: scale 500ms cubic-bezier(0.16, 1, 0.3, 1), filter 500ms cubic-bezier(0.16, 1, 0.3, 1); } .ds-player-hit:hover .ds-player-art { scale: 1.02; filter: brightness(0.92); } .ds-player-badge { font-family: var(--font-sans, 'Archivo Variable', system-ui, sans-serif); position: absolute; bottom: 6%; left: 4%; display: flex; align-items: center; gap: 10px; padding: 10px 20px 10px 14px; background: var(--color-sun, #fcff1c); color: var(--color-ink, #0b2440); font-size: 0.875rem; font-weight: 700; text-transform: uppercase; box-shadow: 0 8px 24px -8px rgb(11 36 64 / 0.55); transition: transform 300ms cubic-bezier(0.16, 1, 0.3, 1); } .ds-player-badge span { font-stretch: 112%; } .ds-player-badge svg { width: 20px; height: 20px; } .ds-player-hit:hover .ds-player-badge { transform: translateY(-2px); } .ds-player-hit:focus-visible { outline: 3px solid var(--color-sun, #fcff1c); outline-offset: 3px; }"
+    },
+    {
+      "name": "Tracklist Row",
+      "kind": "custom",
+      "refersTo": "track-row",
+      "description": "Ruled full-width row that drives the album player; aria-pressed fills it sun and shows the playing state tag.",
+      "html": "<ol class=\"ds-tracks\"><li><button type=\"button\" class=\"ds-track\" aria-pressed=\"true\"><span class=\"ds-track-n\">01</span><span class=\"ds-track-t\">Te Adoro <em>Sonando</em></span><span class=\"ds-track-n\">3:41</span></button></li><li><button type=\"button\" class=\"ds-track\" aria-pressed=\"false\"><span class=\"ds-track-n\">02</span><span class=\"ds-track-t\">Padre Ayúdame <em>Sonando</em></span><span class=\"ds-track-n\">4:02</span></button></li></ol>",
+      "css": ".ds-tracks { font-family: var(--font-sans, 'Archivo Variable', system-ui, sans-serif); list-style: none; margin: 0; padding: 0; width: 420px; max-width: 100%; border-top: 2px solid var(--color-ink, #0b2440); background: var(--color-haze-hi, #a6c5da); color: var(--color-ink, #0b2440); } .ds-tracks li { border-bottom: 1px solid rgb(11 36 64 / 0.25); } .ds-track { display: grid; grid-template-columns: 2.25rem 1fr auto; align-items: baseline; gap: 0 12px; width: 100%; padding: 20px 8px; border: 0; background: transparent; color: inherit; text-align: left; font: inherit; cursor: pointer; transition: background-color 200ms; } .ds-track:hover { background: rgb(255 255 255 / 0.45); } .ds-track[aria-pressed=\"true\"] { background: var(--color-sun, #fcff1c); } .ds-track-n { font-size: 0.875rem; font-weight: 600; color: var(--color-ink-soft, #1d3d5e); font-variant-numeric: tabular-nums; } .ds-track-t { display: flex; align-items: center; gap: 12px; font-size: 1.5rem; line-height: 1.25; font-weight: 800; font-stretch: 118%; } .ds-track-t em { display: none; font-style: normal; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.025em; text-transform: uppercase; } .ds-track[aria-pressed=\"true\"] em { display: inline; } .ds-track:focus-visible { outline: 3px solid var(--color-ink, #0b2440); outline-offset: 3px; }"
+    },
+    {
+      "name": "Channel Row",
+      "kind": "nav",
+      "refersTo": "social-row",
+      "description": "Shore list row linking out to a channel; the whole row turns sun on hover and the arrow lifts.",
+      "html": "<ul class=\"ds-channels\"><li><a href=\"#\" class=\"ds-channel\"><span class=\"ds-channel-name\">YouTube</span><span class=\"ds-channel-handle\">@Cristiansog</span><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.25\" stroke-linecap=\"square\"><path d=\"M6 18 18 6M8 6h10v10\"/></svg></a></li><li><a href=\"#\" class=\"ds-channel\"><span class=\"ds-channel-name\">TikTok</span><span class=\"ds-channel-handle\">Seguir</span><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.25\" stroke-linecap=\"square\"><path d=\"M6 18 18 6M8 6h10v10\"/></svg></a></li></ul>",
+      "css": ".ds-channels { font-family: var(--font-sans, 'Archivo Variable', system-ui, sans-serif); list-style: none; margin: 0; padding: 0 24px; width: 520px; max-width: 100%; border-top: 2px solid #fff; background: var(--color-sea, #0b6b74); } .ds-channels li { border-bottom: 1px solid rgb(255 255 255 / 0.35); } .ds-channel { display: flex; align-items: center; gap: 16px; padding: 24px 0; color: #fff; text-decoration: none; transition: color 200ms; } .ds-channel:hover { color: var(--color-sun, #fcff1c); } .ds-channel-name { font-size: 2rem; line-height: 1; font-weight: 900; font-stretch: 122%; text-transform: uppercase; } .ds-channel-handle { margin-left: auto; font-size: 1.125rem; font-weight: 500; opacity: 0.85; } .ds-channel svg { width: 24px; height: 24px; flex-shrink: 0; transition: transform 300ms cubic-bezier(0.16, 1, 0.3, 1); } .ds-channel:hover svg { transform: translate(4px, -4px); } .ds-channel:focus-visible { outline: 3px solid var(--color-sun, #fcff1c); outline-offset: 3px; }"
+    },
+    {
+      "name": "Region Heading",
+      "kind": "custom",
+      "refersTo": "display",
+      "description": "Display headline naming a region: Archivo 900, wdth 125, uppercase, sun on dark ground.",
+      "html": "<div class=\"ds-region\"><h2 class=\"ds-display\">Videos oficiales</h2><p class=\"ds-body\">Escucha, suscríbete y acompaña lo que viene.</p></div>",
+      "css": ".ds-region { font-family: var(--font-sans, 'Archivo Variable', system-ui, sans-serif); background: var(--color-indigo, #062f7d); padding: 40px 32px; } .ds-display { margin: 0; color: var(--color-sun, #fcff1c); font-size: 3.5rem; font-weight: 900; font-stretch: 125%; text-transform: uppercase; letter-spacing: -0.02em; line-height: 0.88; } .ds-body { margin: 20px 0 0; max-width: 46ch; color: rgb(255 255 255 / 0.9); font-size: 1.125rem; line-height: 1.625; }"
+    },
+    {
+      "name": "Top Navigation",
+      "kind": "nav",
+      "refersTo": "nav",
+      "description": "Plain white links in the hero sky with a sun underline on hover.",
+      "html": "<nav class=\"ds-nav\"><ul><li><a href=\"#\">Exuberante</a></li><li><a href=\"#\">Lo nuevo</a></li><li><a href=\"#\">Videos</a></li><li><a href=\"#\">Historia</a></li></ul></nav>",
+      "css": ".ds-nav { font-family: var(--font-sans, 'Archivo Variable', system-ui, sans-serif); background: var(--color-zenith, #2a6594); padding: 16px 32px; } .ds-nav ul { display: flex; gap: 28px; margin: 0; padding: 0; list-style: none; } .ds-nav a { color: #fff; font-size: 0.875rem; font-weight: 600; text-decoration: none; text-decoration-color: var(--color-sun, #fcff1c); text-decoration-thickness: 2px; text-underline-offset: 0.2em; } .ds-nav a:hover { text-decoration-line: underline; } .ds-nav a:focus-visible { outline: 3px solid var(--color-sun, #fcff1c); outline-offset: 3px; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "Del cielo al mar",
+    "overview": "The whole site is one sky that the visitor descends through. The ground is not a background color behind content; it is the place. It starts as the hazy cerulean of CRISTIAN's own photographs at midday, deepens through a dusk band with a thin apricot horizon and a setting sun, goes to night indigo, and lands on the teal of the Caribbean at Santa Marta, closed by a strip of sand. Every region owns its color field edge to edge; nothing floats on a neutral page.\n\nAgainst that sky, one voice: Exuberante highlighter yellow, set in heavy, expanded, uppercase Archivo. It names each region and marks the one action that matters (play). Body text is Archivo at normal width, white on the dark regions and ink on the pale haze. Media sits in hard-edged dark frames that open into the YouTube player in place; nothing becomes a card, nothing gets rounded.\n\nDensity is low and the type is large. Lists are ruled, not boxed: the tracklist and the channel list are thick-topped, hairline-divided rows whose whole width is the hit target.",
+    "keyCharacteristics": [
+      "One continuous ground that changes with scroll (sky, dusk, night, sea), with fixed stepped bands as the no-JS and reduced-motion fallback.",
+      "Sun yellow is the only accent: display type, the primary play action, the playing state.",
+      "Archivo variable carries everything; the width axis does the hierarchy work (125 display, 112-122 heads, 100 body).",
+      "Square corners everywhere except the literal sun.",
+      "Media opens in place; one track plays at a time."
+    ],
+    "rules": [
+      {
+        "name": "The One Sun Rule",
+        "body": "Sun yellow is the only accent color. If something needs emphasis and is not a display headline, the primary play action, or a state (playing, hover, focus, selection), it does not get yellow.",
+        "section": "colors"
+      },
+      {
+        "name": "The Ground Is Place Rule",
+        "body": "Every section declares a ground color from the sky ramp (as `data-ground`, either one color or `from>to`), and the page interpolates between them. Never add a section with an off-ramp background or a neutral gray panel.",
+        "section": "colors"
+      },
+      {
+        "name": "The Ink On Light Rule",
+        "body": "On haze-hi, sand, yellow and white, text and focus rings switch to ink (the region carries `on-light`). Everywhere else, text is white and focus is yellow.",
+        "section": "colors"
+      },
+      {
+        "name": "The Width Is Hierarchy Rule",
+        "body": "Rank comes from the width axis together with weight: 125 for display, 112-122 for heads and actions, 100 for reading text. Do not bring in a second family to make contrast.",
+        "section": "typography"
+      },
+      {
+        "name": "The Uppercase Is Loud Rule",
+        "body": "Uppercase belongs to display, headlines, the channel rows and action labels. Body, quotes, track titles and meta stay in sentence case.",
+        "section": "typography"
+      },
+      {
+        "name": "The Hanging Frame Rule",
+        "body": "Shadows are always soft, tinted, and pulled in by a negative spread, and they go only under media frames and play actions. Rows, text and sections never get one.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "**Do** give every new region a ground color from the sky ramp and declare it with `data-ground`, keeping the fixed band as its own background for the fallback.",
+      "**Do** set every region name in the display style: Archivo 900, wdth 125, uppercase, in sun on dark ground and ink on haze-hi or sand.",
+      "**Do** let media open in place through the Player facade, keeping one active player at a time and `aria-pressed` on rows that drive a shared player.",
+      "**Do** build lists as ruled rows (2px top rule, 1px dividers at 25-35%) whose full width is the hit target.",
+      "**Do** switch text and focus to ink on pale regions by marking them `on-light`.",
+      "**Do** honor reduced motion: no ground interpolation, no sunset travel, near-instant transitions."
+    ],
+    "donts": [
+      "**Don't** put content in cards, rounded containers or neutral gray panels; color fields own whole regions.",
+      "**Don't** use gradients as decoration on buttons, text or frames. Gradients exist only to paint the sky, the sunset, the sea and the photo masks.",
+      "**Don't** introduce a second accent. Ember belongs to the horizon only, and white is a surface only for the subscribe button and the secondary badge.",
+      "**Don't** round corners on interface elements; the sun is the only circle.",
+      "**Don't** use hard offset shadows, or any shadow outside media frames and play actions.",
+      "**Don't** add a label above section headings; the display headline names the region alone."
+    ]
+  }
+}

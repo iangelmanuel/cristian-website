@@ -1,0 +1,20 @@
+---
+/**
+ * Serializa una entidad de Schema.org. Escapa `<` para que ningún valor pueda
+ * cerrar la etiqueta script antes de tiempo.
+ */
+interface Props {
+  id: string
+  data: object | object[]
+}
+
+const { id, data } = Astro.props
+const json = JSON.stringify(data).replace(/</g, "\u003c")
+---
+
+<script
+  id={id}
+  type="application/ld+json"
+  is:inline
+  set:html={json}
+/>
