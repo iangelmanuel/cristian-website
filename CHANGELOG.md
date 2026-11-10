@@ -7,6 +7,27 @@ y este proyecto sigue [Versionado Semántico](https://semver.org/lang/es/).
 
 ## [Unreleased]
 
+## [0.2.0] — 2026-11-09
+
+Actualización a Node.js 26 (LTS) y dependencias exactas.
+
+### Changed
+
+- **Node.js 26.13.0** (LTS) en `engines`, `.nvmrc` y CI; antes Node 22.
+- **pnpm 12.18.0** como `packageManager`.
+- **Dependencias** a su última versión exacta: Astro 7.4.8, Tailwind CSS 4.3.5,
+  gsap 3.15.1, three 0.187.0, simple-icons 16.37.0, ESLint 10.14.0 y TypeScript 6.0.3.
+
+### Fixed
+
+- `@emnapi/core` y `@emnapi/runtime` fijados a `1.11.3` mediante `overrides` en `pnpm-workspace.yaml`
+  (falla al terminar el proceso en Node 26).
+
+### Notes
+
+- Acciones de GitHub Actions sin cambios de versión (`checkout@v5`,
+  `setup-node@v5`, `pnpm/action-setup@v4`) hasta verificar sus versiones mayores.
+
 ## [0.1.1] - 2026-10-28
 
 ### Añadido
